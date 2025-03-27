@@ -1,4 +1,13 @@
-import React from "react";
+import { CartItem, Guitar } from "../types";
+
+type HeaderProps = {
+  cart: CartItem[];
+  removeToCart: (id: Guitar["id"]) => void;
+  increaseQuantity: (id: Guitar["id"]) => void;
+  decreseQuantity: (id: Guitar["id"]) => void;
+  cleanCart: () => void;
+  cartTotal: number;
+};
 
 const Header = ({
   cart,
@@ -7,7 +16,7 @@ const Header = ({
   decreseQuantity,
   cleanCart,
   cartTotal,
-}) => {
+}: HeaderProps) => {
   return (
     <header className="py-5 header">
       <div className="container-xl">
